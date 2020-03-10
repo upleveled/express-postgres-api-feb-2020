@@ -1,7 +1,7 @@
 # Express PostgreSQL API
 
 - [Express](https://nextjs.org/)
-- [Postgres](https://github.com/porsager/postgres) (with 
+- [Postgres](https://github.com/porsager/postgres)
 - [Ley](https://github.com/lukeed/ley) for database migrations
 
 ## Setup
