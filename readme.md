@@ -14,10 +14,12 @@ You'll also need PostgreSQL for this.
 
 Follow the instructions from [the PostgreSQL step in UpLeveled's System Setup Instructions](https://github.com/upleveled/system-setup/blob/master/windows.md#user-content-postgresql).
 
-Run the following queries to set up the database and the user:
+Run the following queries inside of `psql` to set up the database and the user:
 
 ```sql
 CREATE DATABASE express;
 CREATE USER express WITH ENCRYPTED PASSWORD 'express';
 GRANT ALL PRIVILEGES ON DATABASE express TO express;
+SET ROLE express;
+\connect express;
 ```
