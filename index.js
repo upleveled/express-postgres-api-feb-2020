@@ -4,6 +4,10 @@ require('dotenv').config();
 // Require necessary dependencies
 const express = require('express');
 const postgres = require('postgres');
+const {
+  generateProductLink,
+  generateSingleProductInformation,
+} = require('./utils');
 
 // Create an Express app
 const app = express();
@@ -30,14 +34,7 @@ app.get('/products', async (req, res) => {
     `;
 
     // Respond in the browser with a list of products
-    res.send(
-      products
-        .map(
-          product =>
-            `${product.id}: <a href="/products?id=${product.id}" data-cy="product-link-${product.id}">${product.name}</a>`,
-        )
-        .join('<br />'),
-    );
+    res.send(products.map(generateProductLink).join('<br />'));
   } else if (Object.is(productId, NaN)) {
     // If productId is NaN (Not a Number), then respond
     // with a message as such.
@@ -55,17 +52,7 @@ app.get('/products', async (req, res) => {
     } else {
       // Respond in the browser with a single product
       res.send(
-        singleProductList
-          .map(
-            product =>
-              product.id +
-              ': ' +
-              product.name +
-              '<br />' +
-              product.description +
-              '<br /><a href="/products">Back to Products</a>',
-          )
-          .join('<br />'),
+        singleProductList.map(generateSingleProductInformation).join('<br />'),
       );
     }
   }
@@ -73,5 +60,5 @@ app.get('/products', async (req, res) => {
 
 // Start server on port
 app.listen(port, () =>
-  console.log(`App listening on http://localhost:${port}!`),
+  console.log(`App listening on http://localhost:${port}`),
 );
