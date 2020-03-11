@@ -3,6 +3,8 @@
 - [Express](https://nextjs.org/)
 - [Postgres](https://github.com/porsager/postgres)
 - [Ley](https://github.com/lukeed/ley) for database migrations
+- [Jest](https://jestjs.io/en/) for unit tests
+- [Cypress](https://www.cypress.io/) for end to end test
 
 ## Setup
 

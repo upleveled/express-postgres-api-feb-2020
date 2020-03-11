@@ -10,5 +10,13 @@
     "express": "^4.17.1",
     "ley": "^0.4.1",
     "postgres": "^1.0.2"
+  },
+  "devDependencies": {
+    "cypress": "^4.1.0",
+    "jest": "^25.1.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "e2e": "cypress open"
   }
 }

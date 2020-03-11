@@ -31,7 +31,12 @@ app.get('/products', async (req, res) => {
 
     // Respond in the browser with a list of products
     res.send(
-      products.map(product => product.id + ': ' + product.name).join('<br />'),
+      products
+        .map(
+          product =>
+            `${product.id}: <a href="/products?id=${product.id}" data-cy="product-link-${product.id}">${product.name}</a>`,
+        )
+        .join('<br />'),
     );
   } else if (Object.is(productId, NaN)) {
     // If productId is NaN (Not a Number), then respond
@@ -51,7 +56,15 @@ app.get('/products', async (req, res) => {
       // Respond in the browser with a single product
       res.send(
         singleProductList
-          .map(product => product.id + ': ' + product.name)
+          .map(
+            product =>
+              product.id +
+              ': ' +
+              product.name +
+              '<br />' +
+              product.description +
+              '<br /><a href="/products">Back to Products</a>',
+          )
           .join('<br />'),
       );
     }
