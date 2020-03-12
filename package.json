@@ -13,10 +13,12 @@
   },
   "devDependencies": {
     "cypress": "^4.1.0",
+    "dotenv-cli": "^3.1.0",
     "jest": "^25.1.0"
   },
   "scripts": {
     "start": "node index.js",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "migrate": "dotenv ley --"
   }
 }

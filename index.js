@@ -13,10 +13,15 @@ const {
 const app = express();
 const port = 3000;
 
-// Connect to PostgreSQL with username and password
-const sql = postgres(
-  `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:5432/${process.env.DB_DATABASE}`,
-);
+// Connect to PostgreSQL
+//
+// Host, user, password and database are read from the .env file.
+//
+// If we wanted to configure this manually, we would do this:
+// const sql = postgres(
+//   `postgres://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}:5432/${process.env.PGDATABASE}`,
+// );
+const sql = postgres();
 
 // Create a new route handler that will get called
 // when the user visits http://localhost:3000/products
@@ -30,7 +35,7 @@ app.get('/products', async (req, res) => {
   if (req.query.id === undefined) {
     // Select all products from the `product` table
     const products = await sql`
-      SELECT * FROM product;
+      SELECT * FROM products;
     `;
 
     // Respond in the browser with a list of products
@@ -42,7 +47,7 @@ app.get('/products', async (req, res) => {
   } else {
     // Select a single product
     const singleProductList = await sql`
-      SELECT * FROM product WHERE id = ${productId};
+      SELECT * FROM products WHERE id = ${productId};
     `;
 
     // If the array is empty, then return a message
