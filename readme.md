@@ -14,7 +14,7 @@ You'll also need PostgreSQL for this.
 
 ### PostgreSQL Installation instructions
 
-Follow the instructions from [the PostgreSQL step in UpLeveled's System Setup Instructions](https://github.com/upleveled/system-setup/blob/master/windows.md#user-content-postgresql).
+Follow the instructions from the PostgreSQL step in [UpLeveled's System Setup Instructions](https://github.com/upleveled/system-setup/blob/master/readme.md).
 
 Run the following queries inside of `psql` to set up the database and the user:
 
