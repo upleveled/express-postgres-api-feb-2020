@@ -20,8 +20,5 @@
     "start": "node index.js",
     "e2e": "cypress open",
     "migrate": "dotenv ley --"
-  },
-  "resolutions": {
-    "**/extract-zip/mkdirp/minimist": "0.2.1"
   }
 }
