@@ -8,13 +8,13 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "ley": "^0.4.1",
+    "ley": "^0.5.0",
     "postgres": "^1.0.2"
   },
   "devDependencies": {
     "cypress": "4.3.0",
     "dotenv-cli": "3.1.0",
-    "jest": "25.1.0"
+    "jest": "25.2.4"
   },
   "scripts": {
     "start": "node index.js",
