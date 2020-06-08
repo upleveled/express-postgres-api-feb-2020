@@ -19,6 +19,7 @@
   "scripts": {
     "start": "node index.js",
     "e2e": "cypress open",
-    "migrate": "dotenv ley --"
+    "migrate": "dotenv ley --",
+    "test": "jest"
   }
 }
