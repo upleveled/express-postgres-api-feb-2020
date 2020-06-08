@@ -1,4 +1,4 @@
-name: descriptive-workflow-name
+name: yarn test
 on: push
 
 jobs:
